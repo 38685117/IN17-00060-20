@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </tittle></title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        .main{
+            width: 100%;
+
+        }
+        .laser{
+            height: 100vh;
+            background-image:linear-gradient(rgba(0, 0, 0, 0.726),rgba(0, 0, 0, 0.733)),url('images(16).jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-top: 90px;
+        }
+        nav{
+            width: 100%;
+            height: 8vh;
+            background-color:midnightblue;
+            line-height: 80px;
+            display: flex;
+            justify-content: space-between;
+
+        }
+        .logo h3{
+          font-size: 28px;
+          color: red;
+          font-weight: bold;
+            margin-top: 10px;
+            margin-left: 40px;
+        }
+        ul{
+            margin:0px ;
+            margin-right: 100px;
+        }
+        ul li{
+            float: left;
+            padding: 0px 20px;
+            list-style: none;
+            font-size: 21px;
+            text-transform: uppercase;
+        }
+        ul li a{
+            text-decoration: none;
+            color: white;
+            transition: 0.5s all ease;
+            position: relative;
+        } 
+        ul li ::after{
+            content: "";
+            width:0;
+            height: 2px;
+            background-color: red;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            transition: all 0.5s ease;
+        }
+          ul li a:hover::after{
+            width:120%;
+            background-color: red;
+            cursor: pointer;
+        }
+        ul li a:hover{
+            color: red;
+        }
+        ul .active{
+            color: red;
+        }
+        span{
+            color: white;
+        }
+        .herman{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            -webkit-box-reflect:below -12px lineargradient(transparent, rgba(0,0,0,0.2)) ;
+        }
+        .herman span{
+            font-size: 30px;
+            font-weight: bold;
+            display: inline-block;
+            color: #f9004d;
+            animation: heman 2s infinite;
+            animation-delay:calc(0.1s * var(--i)) ;
+            transition: all 1s ease-in-out;
+            
+        }
+        .herman p{
+            font-size: 25px;
+            color: white;
+        }
+        @keyframes heman{
+            0%{
+transform: translateY(0%);
+        }
+        20%{
+            transform: translateY(-50%);
+        }
+        40%{
+            transform: translateY(50%);
+        }
+        60%,100%{
+        transform: translateY(0%);
+        }
+    }
+    button{
+        border: none;
+        border-radius: 3px;
+        transition: all 1s ease;
+        padding: 10px 25px;
+        font-size: 19px;
+        margin-top: 15px; 
+        margin-left: 100px;
+       text-transform: uppercase;
+    }
+    button:hover{
+        color:orangered;
+        background-color: green;
+       
+    }
+    .container{
+        display: none;
+        cursor:pointer;
+        transform: translate(-50%,40%);
+        transition: 1s ease-in;
+    }
+    .container div{
+        margin: 5px;
+        width: 23px;
+        height: 2px;
+        background-color: #f2f2f2;
+    }
+    .services{
+        background-color: #fcfcfc;
+        width: 100%;
+        padding:100px 0;
+    }
+    .title h2{ 
+        text-align: center;
+        font-size: 30px;
+        color: rgba(8, 1, 1, 0.925);
+        border-bottom: 1px solid black;
+        width:250px;
+        margin: 25px auto; 
+    }
+    .box{
+        display: inline-block;
+        min-height: 400px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .card{
+        width:210px;
+        height: 400px;
+        overflow: hidden;
+        border-radius: 10px;
+        position: relative;
+        margin: 15px;
+        float: left;
+        border: 1px solid black;
+    }
+    .card img{
+   margin-bottom: 10px;
+   
+    }
+    .card h4{
+        color: #f9004d;
+        margin-left: 10px;
+        font-size: 18px;
+        text-transform: capitalize;
+         margin-bottom:10px ;
+    }
+    .card h5{
+        font-size: 20px;
+        color: black;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+    .card a{
+        text-decoration: none;
+       color: #fcfcfc;
+        font-size: 19px;
+        margin-left: 9px;
+        background-color: #f9004d;
+        border: none;
+        padding: 8px 50px;
+        transition: .4s;
+       border-radius: 6px;
+    
+    }
+    .card a:hover{
+        background-color: transparent;
+        border: 1px solid #f9004d;
+         color: black;
+    }
+    .staff{
+        width: 100%;
+        padding: 100px 0;
+    }
+    .cylinder{
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        min-height: 400px;
+        
+    }
+    .heading h2{
+        text-align: center;
+        border-bottom: 1px solid rgb(73, 141, 73);
+        width: 200px;
+        font-size: 30px;
+        margin:25px auto;
+    }
+    .can{
+        width: 300px;
+        height: 480px;
+        text-align: center;
+        position: relative;
+        margin: 15px;
+        border-radius: 10px;
+        overflow: hidden;
+         border: 1px solid #c5bcbc;
+    }
+    .can h6{
+        font-size: 22px;
+
+    }
+    .can small{
+        color: black;
+        font-size: 20px;
+    }
+    .can b{
+        color: #f9004d;
+    }
+    .hey h1{
+        text-align: center;
+        font-size: 24px;
+        color: #f9004d;
+    }
+    .hey span{
+        color: black;
+    }
+#tattle{
+    overflow: hidden;
+}
+#tattle figure{
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+ animation: tattle 20s infinite;
+ border-bottom: 2px solid #f9004d;
+ margin-bottom: 25px;
+}
+@keyframes tattle{
+    0%{
+    left: 0;
+    }
+    20%{
+        left: 0;
+    }
+    25%{
+      left:  -100%;
+    }
+    45%{
+      left: -100%;
+    }
+    50%{
+        left:-200%;
+    }
+    70%{
+        left:-200%;
+    }
+    75%{
+        left:-300%;
+    }
+    95%{
+        left:-300%;
+    }
+    100%{
+        left:-400%;
+    }
+}
+#tattle figure img{
+    width: 20%;
+    float: left;
+    height:850px;
+}
+.pool{
+    background-color: #9e9a9a;
+    min-height: 550px;
+}
+.yello{
+    background-color: #d8d1d1;
+    padding: 10px 0px;
+}
+.yello h2{
+    float: left;
+    font-size: 22px;
+    margin-left: 25px;
+}
+form{
+    width: 400px;
+    height: 350px;
+    margin: 30px;
+}
+form input{
+    width: 100%;
+    padding: 10px 0;
+    margin: 10px;
+    color: black;
+    border-radius: 7px;
+    border: none;
+}
+form input:focus{
+    border: 1px solid green;
+}
+#btl button{
+    border: none;
+    padding: 7px 75px;
+    background-color: #f9004d;
+    color: white;
+}
+#btl button:hover{
+    background-color: transparent;
+    border: 1px solid #f9004d;
+    color:black;
+    margin: 10px;
+}
+form textarea{
+    border: 1px solid black;
+    outline: none;
+    margin: 10px;
+    border-radius: 10px;
+}
+    </style>
+</head>
+<body>
+    <div class="main">
+    <div class="wrapper">
+    <div class="laser">
+    <nav>
+        <div class="logo">
+          <h3><span>JFOOD</span>RESTAURANT</h3>
+        </div>
+       <ul class="bar">
+        <li class="very"><a class="active" href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Food</a></li>
+        <li><a href="#">Staff</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+       </ul>
+       <div class="container">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+
+
+       </div>
+    </nav>
+    <div id="tattle">
+        <figure>
+      <img src="images (2).jpeg" alt="no images">
+      <img src="images(16).jpg" alt="no image"  >
+      <img src="images(12).jpeg" alt="no image" >
+      <img src="images(11).jpg" alt="no image"  >
+      <img src="images (2).jpeg" alt="no image" >
+        </figure>
+    </div>
+    <div class="herman">
+         <span style="--i:1;">W</span>
+         <span style="--i:2;">E</span>
+        <span style="--i:3;">L</span>
+        <span style="--i:4;">C</span>
+        <span style="--i:5;">O</span>
+        <span style="--i:6;">M</span>
+         <span style="--i:7;">E</span>
+        <span style="--i:8; margin-left: 17px;">T</span>
+        <span style="--i:9;">O</span>
+        <span style="--i:10; margin-left: 17px;">J</span>
+         <span style="--i:11;">F</span>
+        <span style="--i:12;">O</span>
+        <span style="--i:13;">O</span>
+        <span style="--i:14;">D</span>
+        <p>its only at JFOOD where you will enjoy spending time and enjoying our meals.<br>from our specilised and experinced catering staff.Come experience this yourself, Remember healthy meals is nutritious to our bodies.</p>
+        <button>order Now</button>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="services">
+<div class="title">
+    <h2>Our menu today</h2>
+</div>
+<div class="box">
+    <div class="card">
+        <img src="images (2).jpeg" alt="no image">
+        <h4>fried chips</h4>
+        <h5>$10.50</h5>
+        <a href="#">OrderNow</a>
+    </div>
+</div>
+<div class="box">
+    <div class="card">
+        <img src="images(16).jpg" alt="no image" style="width:350px ;height:230px;">
+        <h4>hamburger</h4>
+        <h5>$35.50</h5>
+        <a href="#">OrderNow</a>
+    </div>
+</div>
+<div class="box">
+    <div class="card">
+        <img src="images(11).jpg" alt="no image"style="width:350px ;height:230px;">
+        <h4>fried chicken</h4>
+        <h5>$25.50</h5>
+        <a href="#">OrderNow</a>
+    </div>
+</div>
+<div class="box">
+    <div class="card">
+        <img src="images(9).jpeg" alt="no image"style="width:350px ;height:230px;">
+        <h4>sandwich</h4>
+        <h5>$15.50</h5>
+        <a href="#">OrderNow</a>
+    </div>
+</div>
+<div class="box">
+    <div class="card">
+        <img src="images(12).jpeg" alt="no image"style="width:350px ;height:230px;">
+        <h4>fried fish</h4>
+        <h5>$22.50</h5>
+        <a href="#">OrderNow</a>
+    </div>
+</div>
+<div class="box">
+    <div class="card">
+        <img src="images(10).jpeg" alt="no image"style="width:350px ;height:230px;">
+        <h4>pizza</h4>
+        <h5>$10.50</h5>
+        <a href="#">OrderNow</a>
+    </div>
+</div>
+<div class="box">
+    <div class="card">
+        <img src="images (1).jpeg" alt="no image"style="width:350px ;height:230px;">
+        <h4>spagheti</h4>
+        <h5>$9.50</h5>
+        <a href="#">OrderNow</a>
+    </div>
+</div>
+<div class="hey">
+    <h1><span>#</span> remember customer is always right..</h1>
+</div>
+    </div>
+    <div class="staff">
+        <div class="heading">
+            <h2>Our staff</h2>
+        </div>
+        <div class="cylinder">
+            <div class="can">
+                <img src="images(14).jpeg" alt="no image"style="width:320px ;height:230px;">
+                <h6>Miss.Jane Caterine</h6>
+                <small>She is the chief chef in our restaurant, <b>very industrious & competent</b> , she has a diploma in <b>food and beverages</b></small>
+            </div>
+        </div>
+        <div class="cylinder">
+            <div class="can">
+                <img src="images (3).jpeg" alt="no image"style="width:320px ;height:230px;">
+                <h6>Mr.John Smith</h6>
+                <small>He is the Assistant-chief chef in our restaurant, <b>very industrious & competent </b>, he has a diploma in <b>food and beverages</b></small>
+            </div>
+        </div>
+        <div class="cylinder">
+            <div class="can">
+                <img src="images(13).jpg" alt="no image"style="width:320px ;height:230px;">
+                <h6>Mr.James Newton</h6>
+                <small>He is a chef in our restaurant, <b>very industrious & competent</b> , he has a diploma in <b>food and beverages</b></small>
+            </div>
+        </div>
+        <div class="cylinder">
+            <div class="can">
+                <img src="images.jpeg" alt="no image"style="width:320px ;height:230px;">
+                <h6>Our team</h6>
+                <small>These are the Attendees in our restaurant, <b>very industrious & competent</b> , Each and every one is social, feel free to interact with them </small>
+            </div>
+        </div>
+    </div>
+    <div class="pool">
+        <div class="repper">
+        <div class="yello">
+            <h2>CONTACT FORM</h2>
+        </div>
+        <form>
+            <input type="text" placeholder="firstname">
+            <input type="text" placeholder="secondname">
+            <textarea name="text" id="" cols="30" rows="10" placeholder="type text here......"></textarea>
+            <button type="button" id="btl">Send</button>
+        </form>
+        </div>
+    </div>
+</body>
+</html> 
